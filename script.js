@@ -60,10 +60,16 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
     else {
       randomNumber = Math.floor(Math.random() * 26);
       if (isLowerCase) {
+        newPassword = newPassword.concat(getChars(randomNumber).toLowerCase());
       }
       else if (isUppercase) {
+        newPassword = newPassword.concat(getChars(randomNumber));
       }
     }
     return newPassword;
   }
+}
+
+function getChars (charId) {
+  
 }
