@@ -44,15 +44,17 @@ function generatePassword() {
   }
 }
 
-function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNumbers, isSpecialChars) {
+function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNumber, isSpecialChar) {
   var newPassword = "";
+  // Selector points to the character type
+  var randomSelector = Math.floor(Math.random() * 5);
   for (var i = 0; passwordLength > i; i++) {
     var randomNumber = 0;
-    if (isNumbers) {
+    if (isNumber) {
       randomNumber = Math.floor(Math.random() * 10);
       newPassword = newPassword.concat(randomNumber.toString());
     }
-    else if (isSpecialChars) {
+    else if (isSpecialChar) {
       // "!#$%&'()*+,-./:;=>?@[]^_`{|}~"
       randomNumber = Math.floor(Math.random() * 29);
       newPassword = newPassword.concat(getSpecialChars(randomNumber));
@@ -129,4 +131,8 @@ function getSpecialChars (charId) {
   else if (charId == 26) { return "|"; }
   else if (charId == 27) { return "}"; }
   else if (charId == 28) { return "~"; }
+}
+
+function getSelector (isLower, isUpper, isNumber, isSpecialChar) {
+  
 }
