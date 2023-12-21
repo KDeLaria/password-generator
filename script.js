@@ -30,10 +30,10 @@ function generatePassword() {
     return "Please try again";
   }
 
-    var hasLowerCase = confirm("Click OK if you would like include lowercase characters");
-    var hasUpperCase = confirm("Click OK if you would like include lowercase characters");
-    var hasNumbers = confirm("Click OK if you would like include lowercase characters");
-    var hasSpecialChars = confirm("Click OK if you would like include special characters");
+  var hasLowerCase = confirm("Click OK if you would like include lowercase characters");
+  var hasUpperCase = confirm("Click OK if you would like include lowercase characters");
+  var hasNumbers = confirm("Click OK if you would like include lowercase characters");
+  var hasSpecialChars = confirm("Click OK if you would like include special characters");
 
   if (hasLowerCase || hasUpperCase || hasNumbers || hasSpecialChars) {
     return generateRandomCharacters(passwordLength, hasLowerCase, hasUpperCase, hasNumbers, hasSpecialChars);
@@ -44,23 +44,26 @@ function generatePassword() {
   }
 }
 
-function generateRandomCharacters (passwordLength, isLowerCase, isUppercase, isNumbers, isSpecialChars){
+function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNumbers, isSpecialChars) {
   var newPassword = "";
   for (var i = 0; passwordLength > i; i++) {
     var randomNumber = 0;
-    if (isLowerCase){
-      randomNumber = Math.floor(Math.random() * 26);
-    }
-    else if (isUppercase) {
-      randomNumber = Math.floor(Math.random() * 26);
-
-    }
-    else if (isNumbers) {
+    if (isNumbers) {
       randomNumber = Math.floor(Math.random() * 10);
       newPassword = newPassword.concat(randomNumber.toString());
     }
-    else if (isSpecialChars){
+    else if (isSpecialChars) {
+      // "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+      randomNumber = Math.floor(Math.random() * 30);
 
     }
+    else {
+      randomNumber = Math.floor(Math.random() * 26);
+      if (isLowerCase) {
+      }
+      else if (isUppercase) {
+      }
+    }
+    return newPassword;
   }
 }
