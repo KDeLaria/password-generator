@@ -53,8 +53,8 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
       newPassword = newPassword.concat(randomNumber.toString());
     }
     else if (isSpecialChars) {
-      // "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
-      randomNumber = Math.floor(Math.random() * 30);
+      // "!#$%&'()*+,-./:;=>?@[]^_`{|}~"
+      randomNumber = Math.floor(Math.random() * 29);
       newPassword = newPassword.concat(getSpecialChars(randomNumber));
     }
     else {
@@ -98,7 +98,35 @@ function getChars (charId) {
   else if (charId == 24) { return "y"; }
   else if (charId == 25) { return "z"; }
 }
-
+// "!#$%&'()*+,-./:;=>?@[]^_`{|}~"
 function getSpecialChars () {
-  
+  if (charId == 0) {  return "!"  }
+  else if (charId == 1) { return "#"; }
+  else if (charId == 2) { return "$"; }
+  else if (charId == 3) { return "%"; }
+  else if (charId == 4) { return "&"; }
+  else if (charId == 5) { return "'"; }
+  else if (charId == 6) { return "("; }
+  else if (charId == 7) { return ")"; }
+  else if (charId == 8) { return "*"; }
+  else if (charId == 9) { return "+"; }
+  else if (charId == 10) { return ","; }
+  else if (charId == 11) { return "-"; }
+  else if (charId == 12) { return "."; }
+  else if (charId == 13) { return "/"; }
+  else if (charId == 14) { return ":"; }
+  else if (charId == 15) { return ";"; }
+  else if (charId == 16) { return "="; }
+  else if (charId == 17) { return ">"; }
+  else if (charId == 18) { return "?"; }
+  else if (charId == 19) { return "@"; }
+  else if (charId == 20) { return "["; }
+  else if (charId == 21) { return "]"; }
+  else if (charId == 22) { return "^"; }
+  else if (charId == 23) { return "_"; }
+  else if (charId == 24) { return "`"; }
+  else if (charId == 25) { return "{"; }
+  else if (charId == 26) { return "|"; }
+  else if (charId == 27) { return "}"; }
+  else if (charId == 28) { return "~"; }
 }
