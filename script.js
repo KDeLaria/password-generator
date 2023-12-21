@@ -99,7 +99,7 @@ function getChars (charId) {
   else if (charId == 25) { return "z"; }
 }
 // "!#$%&'()*+,-./:;=>?@[]^_`{|}~"
-function getSpecialChars () {
+function getSpecialChars (charId) {
   if (charId == 0) {  return "!"  }
   else if (charId == 1) { return "#"; }
   else if (charId == 2) { return "$"; }
