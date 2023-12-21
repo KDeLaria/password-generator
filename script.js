@@ -55,7 +55,7 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
     else if (isSpecialChars) {
       // "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
       randomNumber = Math.floor(Math.random() * 30);
-
+      newPassword = newPassword.concat(getSpecialChars(randomNumber));
     }
     else {
       randomNumber = Math.floor(Math.random() * 26);
@@ -97,4 +97,8 @@ function getChars (charId) {
   else if (charId == 23) { return "x"; }
   else if (charId == 24) { return "y"; }
   else if (charId == 25) { return "z"; }
+}
+
+function getSpecialChars () {
+  
 }
