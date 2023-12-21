@@ -60,10 +60,10 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
     else {
       randomNumber = Math.floor(Math.random() * 26);
       if (isLowerCase) {
-        newPassword = newPassword.concat(getChars(randomNumber).toLowerCase());
+        newPassword = newPassword.concat(getChars(randomNumber));
       }
       else if (isUppercase) {
-        newPassword = newPassword.concat(getChars(randomNumber));
+        newPassword = newPassword.concat(getChars(randomNumber).toUpperCase());
       }
     }
     return newPassword;
@@ -71,5 +71,30 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
 }
 
 function getChars (charId) {
-  
+  if (charId == 0) {  return "a"  }
+  else if (charId == 1) { return "b"; }
+  else if (charId == 2) { return "c"; }
+  else if (charId == 3) { return "d"; }
+  else if (charId == 4) { return "e"; }
+  else if (charId == 5) { return "f"; }
+  else if (charId == 6) { return "g"; }
+  else if (charId == 7) { return "h"; }
+  else if (charId == 8) { return "i"; }
+  else if (charId == 9) { return "j"; }
+  else if (charId == 10) { return "k"; }
+  else if (charId == 11) { return "l"; }
+  else if (charId == 12) { return "m"; }
+  else if (charId == 13) { return "n"; }
+  else if (charId == 14) { return "o"; }
+  else if (charId == 15) { return "p"; }
+  else if (charId == 16) { return "q"; }
+  else if (charId == 17) { return "r"; }
+  else if (charId == 18) { return "s"; }
+  else if (charId == 19) { return "t"; }
+  else if (charId == 20) { return "u"; }
+  else if (charId == 21) { return "v"; }
+  else if (charId == 22) { return "w"; }
+  else if (charId == 23) { return "x"; }
+  else if (charId == 24) { return "y"; }
+  else if (charId == 25) { return "z"; }
 }
