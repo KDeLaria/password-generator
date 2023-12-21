@@ -17,26 +17,29 @@ generateBtn.addEventListener("click", writePassword);
 // prompt for length, at least 8 characters and no more than 128 characters
 // confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 // input should be validated and at least one character type should be selected
-
+var isLowerCase = false;
+var isUpperCase = false;
+var isNumber = false;
+var isSpecialChar = false;var m = "".isN
 // Generates a password and returns it
 function generatePassword() {
   var passwordLength = Number.parseInt(prompt("Enter password length (8 to 128). \nPassword length: "));
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Incorrect password length of " + passwordLength.toString() + ".\nPassword must be between 8 and 128 in length");
-    return "Please try again";
+    return "Please try again.";
   }
   else if (!Number.isInteger(passwordLength)) {
     alert("The length must be a number.");
-    return "Please try again";
+    return "Please try again.";
   }
 
-  var hasLowerCase = confirm("Click OK if you would like include lowercase characters");
-  var hasUpperCase = confirm("Click OK if you would like include lowercase characters");
-  var hasNumbers = confirm("Click OK if you would like include lowercase characters");
-  var hasSpecialChars = confirm("Click OK if you would like include special characters");
+  isLowerCase = confirm("Click OK if you would like include lowercase characters");
+  isUpperCase = confirm("Click OK if you would like include lowercase characters");
+  isNumber = confirm("Click OK if you would like include lowercase characters");
+  isSpecialChar = confirm("Click OK if you would like include special characters");
 
-  if (hasLowerCase || hasUpperCase || hasNumbers || hasSpecialChars) {
-    return generateRandomCharacters(passwordLength, hasLowerCase, hasUpperCase, hasNumbers, hasSpecialChars);
+  if (isLowerCase || isUpperCase || isNumber || isSpecialChar) {
+    return generateRandomCharacters(passwordLength, isLowerCase, isUpperCase, isNumber, isSpecialChar);
   }
   else {
     alert("You must select at least one character type. \n\nCharacter types are: lowercase, uppercase, numeric, and/or special characters")
@@ -46,8 +49,6 @@ function generatePassword() {
 
 function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNumber, isSpecialChar) {
   var newPassword = "";
-  // Selector points to the character type
-  var randomSelector = Math.floor(Math.random() * 5);
   for (var i = 0; passwordLength > i; i++) {
     var randomNumber = 0;
     if (isNumber) {
@@ -72,8 +73,8 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
   }
 }
 
-function getChars (charId) {
-  if (charId == 0) {  return "a"  }
+function getChars(charId) {
+  if (charId == 0) { return "a" }
   else if (charId == 1) { return "b"; }
   else if (charId == 2) { return "c"; }
   else if (charId == 3) { return "d"; }
@@ -101,8 +102,8 @@ function getChars (charId) {
   else if (charId == 25) { return "z"; }
 }
 // "!#$%&'()*+,-./:;=>?@[]^_`{|}~"
-function getSpecialChars (charId) {
-  if (charId == 0) {  return "!"  }
+function getSpecialChars(charId) {
+  if (charId == 0) { return "!" }
   else if (charId == 1) { return "#"; }
   else if (charId == 2) { return "$"; }
   else if (charId == 3) { return "%"; }
@@ -133,6 +134,9 @@ function getSpecialChars (charId) {
   else if (charId == 28) { return "~"; }
 }
 
-function getSelector (isLower, isUpper, isNumber, isSpecialChar) {
-  
+function getSelector(isLower, isUpper, isNumber, isSpecialChar) {
+  // Selector points to the character type
+  var randomSelector = Math.floor(Math.random() * 5);
+
+
 }
