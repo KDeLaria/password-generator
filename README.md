@@ -1,5 +1,8 @@
 # Password Generator
 
+![Horiseon Webpage](./assets/images/Screenshot.png)
+Visit the [Password Generator](https://kdelaria.github.io/password-generator/).
+
 ## Description
 
  This webpage was designed to generate a password for the user.
