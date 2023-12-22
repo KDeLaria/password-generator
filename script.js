@@ -67,66 +67,16 @@ function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNu
   }
   return newPassword;
 }
-
+// Returns character at the position
 function getChars(charId) {
-  if (charId === 0) { return "a" }
-  else if (charId === 1) { return "b"; }
-  else if (charId === 2) { return "c"; }
-  else if (charId === 3) { return "d"; }
-  else if (charId === 4) { return "e"; }
-  else if (charId === 5) { return "f"; }
-  else if (charId === 6) { return "g"; }
-  else if (charId === 7) { return "h"; }
-  else if (charId === 8) { return "i"; }
-  else if (charId === 9) { return "j"; }
-  else if (charId === 10) { return "k"; }
-  else if (charId === 11) { return "l"; }
-  else if (charId === 12) { return "m"; }
-  else if (charId === 13) { return "n"; }
-  else if (charId === 14) { return "o"; }
-  else if (charId === 15) { return "p"; }
-  else if (charId === 16) { return "q"; }
-  else if (charId === 17) { return "r"; }
-  else if (charId === 18) { return "s"; }
-  else if (charId === 19) { return "t"; }
-  else if (charId === 20) { return "u"; }
-  else if (charId === 21) { return "v"; }
-  else if (charId === 22) { return "w"; }
-  else if (charId === 23) { return "x"; }
-  else if (charId === 24) { return "y"; }
-  else if (charId === 25) { return "z"; }
+  var alphaChar = "abcdefghijklmnopqrstuvwxyz".split("");
+  return alphaChar[charId];
 }
-// "!#$%&'()*+,-./:;=>?@[]^_`{|}~"
+
+// Returns the special character at the position
 function getSpecialChars(charId) {
-  if (charId === 0) { return "!" }
-  else if (charId === 1) { return "#"; }
-  else if (charId === 2) { return "$"; }
-  else if (charId === 3) { return "%"; }
-  else if (charId === 4) { return "&"; }
-  else if (charId === 5) { return "'"; }
-  else if (charId === 6) { return "("; }
-  else if (charId === 7) { return ")"; }
-  else if (charId === 8) { return "*"; }
-  else if (charId === 9) { return "+"; }
-  else if (charId === 10) { return ","; }
-  else if (charId === 11) { return "-"; }
-  else if (charId === 12) { return "."; }
-  else if (charId === 13) { return "/"; }
-  else if (charId === 14) { return ":"; }
-  else if (charId === 15) { return ";"; }
-  else if (charId === 16) { return "="; }
-  else if (charId === 17) { return ">"; }
-  else if (charId === 18) { return "?"; }
-  else if (charId === 19) { return "@"; }
-  else if (charId === 20) { return "["; }
-  else if (charId === 21) { return "]"; }
-  else if (charId === 22) { return "^"; }
-  else if (charId === 23) { return "_"; }
-  else if (charId === 24) { return "`"; }
-  else if (charId === 25) { return "{"; }
-  else if (charId === 26) { return "|"; }
-  else if (charId === 27) { return "}"; }
-  else if (charId === 28) { return "~"; }
+  var specialChar = "!#$%&'()*+,-./:;=>?@[]^_`{|}~".split("");
+  return specialChar[charId];
 }
 
 // Selects a random character type and compares the random
@@ -140,7 +90,7 @@ function getSelector(isLower, isUpper, isNumber, isSpecialChar) {
     return randomSelector;
   }
   else {
-    getSelector();
+    getSelector(isLower, isUpper, isNumber, isSpecialChar);
   }
 
 }
