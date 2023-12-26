@@ -47,7 +47,7 @@ function generatePassword() {
 // Loops through each character and attaches a random one to the password that will be returned
 function generateRandomCharacters(passwordLength, isLowerCase, isUppercase, isNumber, isSpecialChar) {
   var newPassword = "";
-  for (var i = 0; passwordLength > i; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     var selector = getSelector(isLowerCase, isUppercase, isNumber, isSpecialChar);
     var randomNumber;
     if (selector === 2) {
@@ -85,12 +85,10 @@ function getSelector(isLower, isUpper, isNumber, isSpecialChar) {
   // Selector points to the character type
   // Lowercase: 0, Uppercase: 1, Number: 2, Special characters: 3
   var randomSelector = Math.floor(Math.random() * 4);
-  if ((randomSelector === 0 && isLower) || (randomSelector === 1 && isUpper) || 
-  (randomSelector === 2 && isNumber) || (randomSelector === 3 && isSpecialChar))  {
-    return randomSelector;
-  }
-  else {
-    getSelector(isLower, isUpper, isNumber, isSpecialChar);
-  }
 
+  while ((randomSelector === 0 && !isLower) || (randomSelector === 1 && !isUpper) || 
+  (randomSelector === 2 && !isNumber) || (randomSelector === 3 && !isSpecialChar)) {
+    randomSelector =  Math.floor(Math.random() * 4);
+  }
+  return randomSelector;
 }
