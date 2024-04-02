@@ -1,6 +1,6 @@
 # Password Generator
 
-![Password Generator](./assets/images/Screenshot.png)
+[<img src="./assets/images/Screenshot.png">](https://kdelaria.github.io/password-generator/)
 Visit the [Password Generator](https://kdelaria.github.io/password-generator/).
 
 ## Description
